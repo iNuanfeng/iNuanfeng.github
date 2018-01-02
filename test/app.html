@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="target-densitydpi=device-dpi, width=750, user-scalable=no">
+  <title>测试h5</title>
+  <style>
+    button {
+      width: 200px;
+      height: 80px;
+      background: #cccccc;
+      font-size: 28px;
+    }
+  </style>
+</head>
+<body>
+  <button onclick="test_return()">测试return</button>
+  <script>
+    function test_return() {
+      var res = app.getInfo();
+      alert(res);
+    }
+
+  </script>
+</body>
+</html>
