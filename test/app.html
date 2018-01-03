@@ -11,14 +11,21 @@
       background: #cccccc;
       font-size: 28px;
     }
+    div {
+      font-size: 28px;
+    }
   </style>
 </head>
 <body>
-  <button onclick="test_return()">测试return</button>
+  <button onclick="test_app()">测试app</button>
+  <div id="text1"></div>
+  <div id="text2"></div>
   <script>
-    function test_return() {
-      var res = app.getInfo();
-      alert(res);
+    function test_app() {
+      var res;
+      res = app.getInfo();
+      document.querySelector('#text1').innerHTML = res;
+      document.querySelector('#text2').innerHTML = 'text2';
     }
 
   </script>
