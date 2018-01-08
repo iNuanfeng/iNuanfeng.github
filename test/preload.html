@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>preload</title>
+  <script src="http://apps.bdimg.com/libs/zepto/1.1.4/zepto.min.js"></script>
+  <!-- <link rel="preload" href="http://yun.tuipink.com/wawaji/h5/static/img/bg.fce9aa8.png" as="image"> -->
+  <link rel="prefetch" href="/html5/yellowman/index.html" as="html" crossorigin="use-credentials">
+</head>
+
+<body>
+  <button id="J_Add" style="width: 200px; height: 80px; background: #ccc; font-size: 28px;">添加图片</button>
+  <div id="J_Pic"></div>
+  <div class="goods-wrap">
+    <div id="mainImg-content">
+      <img src="//yun.7ho.com/images/201710/42fj0s1ng0.jpg?x-oss-process=image/format,webp" class="loaded">
+    </div>
+    <div id="promise-content">
+      <ul class="promise-list" id="J_Promise">
+        <li>
+          <img class="promise-icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAMAAAAM7l6QAAAApVBMVEUAAADzKSj2KSj3KSj0KSjzKSj3KSj3KSj0KSjzKSjzKSj3KSj0KSj0KSj0KSjzKSj0KSjzKSjzKSj0KSjzKSj3KSj1KSj0KSjzKSj1KSj3KSj3KSj0KSj3KSj3KSj3KSj0KSj0KSjzKSj3KSj3KSj3KSj1KSj3KSjzKSj3KSj3KSjzKSjzKSj3KSj3KSj3KSjzKSj3KSj3KSjzKSj3KSj3KSj3KSjVq2NVAAAANnRSTlMABXPrFurmLkznk1pYNSXCnhD5xgP217qADN5hOvvy7sCslmqlk495PQno397Ls4iBVUY+IB7Zus53AAABVElEQVQoz4WTedOCIBDGFxPD+yCPtLSy+34vvv9HewcQtJqp3x8oPDOwu88uaBDZUjtJbLolCJ6JCxwaMxMhc2aEuIgfVc+OAtAEke1Bz2SV+fCAf1pNtLrMp/CEGS6V7oQIXkC50717Mvnnr2EaAgDTTLwf2/LdtHQ9l+O5a8aPfJvHX0RC3TLoyVO+RgUAwiKjA3NhAKt4fhgBWYj9rYEh65KvCwKOIfYjllk9ZT3nh4YD4V7eFrlV1Rod7UbIPxSwKWXyaMFI1AZDgmRa6bFO++jGQkaJktlu7BNTy1MlY7MrSrbTmrHbNN3ldC9lum61Hdf8UvOfPVWJsRloDlV7a2Riqizsa2BmVlq1LIsqKvuGIYejLKqyhG2CsSb4rZiwRBt6nVujHmt+UYaCdzbhGdkO75vpQyu+aeTzavJ5DDTxfThE9/g1FuJQnCSYOoMR/AcoMhsGidoPjAAAAABJRU5ErkJggg=="><span class="label">7天包换</span>
+        </li>
+        <li>
+          <img class="promise-icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAMAAAAM7l6QAAAAmVBMVEUAAAD0KSj1KSj0KSj1KSjzKSj3KSj3KSj0KSj1KSjzKSjzKSj3KSj0KSj0KSj0KSj0KSj2KSjzKSjzKSj0KSj3KSj1KSjzKSj1KSjzKSj0KSj0KSj3KSj3KSj3KSj3KSj3KSj3KSj3KSj0KSjzKSj3KSj3KSj3KSj3KSjzKSjzKSj2KSj3KSjzKSj3KSjzKSj3KSj3KSj3KSgGny0dAAAAMnRSTlMABoDnS8FXKhYM6gXqkiTGlTqeVxBbPfnfdja6i1BGLB8S89ethGIaCvrr2sk1v3VqZebMMloAAAGCSURBVCjPhZPXcoMwEEUvCNFMtQ1uYNx7y/7/x0USQh6cSXIeVjB3ZvvCMHDilE0mLI2dAT4Z2yGf5b5l+fmMh/a4r47YMIEhGbIR3gyy6xw95tNsYNTdIsAHPt91eswt/MBaZDru1FdveTvJJ/CaZiXfrYo/ZjrukqQ9MhIUMj6T+dtDCFa1G9PBXaKmqniRDcFQWCtUFW2opW7oCIdUuCS04HBI6Gt9oNV6s/dojmgKBXcQz1rZgUNAZHt0PIkfxSxGWrayC5cCJQfVBi1litD/lNe3qOtNiInVygVK6XwvnOdU6dZMjFwGV7ql54NHOfbUaNk4z4OIIkaFlEFb7dykVmCpMlfynnRqpjAXhUqtoUT1Vxfm8E6uNydQlYgvLKhri3VJdFskD5Ea0ZQq3VQ5Et3UAJKCsgfLoEfSDZQkcswvaRV3Njbr4NWu657k1K+esHodFNkvy/THKq7VKmo929776l0v8v9noI/owp/tET35xRxR/wTD8zkUJ/jO9BuogyT6sP6jeQAAAABJRU5ErkJggg=="><span class="label">全国包邮</span>
+        </li>
+        <li>
+          <img class="promise-icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAMAAAAM7l6QAAAAt1BMVEUAAAD0KSj3KSjzKSj0KSj3KSj1KSj1KSj2KSj1KSj3KSjzKSjzKSj0KSj0KSj0KSjzKSjzKSj3KSjzKSjzKSj3KSjzKSj3KSj2KSj3KSj3KSj3KSj3KSj3KSj3KSj1KSj3KSj3KSj0KSj3KSj0KSj3KSj0KSj3KSj3KSj3KSjzKSj0KSj3KSjzKSjzKSjzKSj1KSj3KSjzKSj3KSj3KSj3KSj3KSj3KSj3KSj3KSj3KSj3KSj3KSgTPI9dAAAAPHRSTlMABeDqwfqATDkkAueTNhcQ+cawdlcvA8UH65h7UjwaFNzTu6WVQwz17+Xf2bStnp2Qij3NnW1XSGQzHyvu+LGIAAABkUlEQVQoz32T23qqMBBGf0xKUBBBtAIbPOGxtR7qqe3O+z9XMxFI7dd2XSQX60tmJplBjSX2oRsEbrgXFr7TsRmPct+y/DzizO7c2567baKmuXV7MDzOntu4o/00e6zty3QBIivoaBeKEX+pvMfLXPpSAMn4lunUK+M+jVDyJpFJ3Fg86/gdl+K2rpe+2o5FMgeGF7FQ8V3K395CsZfyAN5YS3lMrn0pUwA7W8VguqLxJG6hPf8/OThzH3E6oSSZBcGh9ZEuOqXJID2p6w+kwQW8SOvTw9pGuumuJt3N3ElWBRSRh/BV6ziZvusDF7V8HJa6mNcQzIdm/AZC3aEY3mr3GYL4phv/QKQZrU6jRZsVfNUGo5lvdJxlV5GNau0zSq3SnU2XGDRJl6l5Ua3fVx9DReNMuixM8Fq39gOiiCvNRfWoWJ9haJLWjwp7B2JV5LnTJ9p5fl6S3tn1h2K2fDAsN6g+1LSDwbSDaSaDaSbTigbTin818u9jsHN7PwyRQ0Pk3A+RGUEvZEHAQu/LCH4CGYQi5t3qOF4AAAAASUVORK5CYII="><span class="label">货到付款</span>
+        </li>
+        <li>
+          <img class="promise-icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAMAAAAM7l6QAAAAulBMVEUAAAD0KSjzKSjzKSj0KSjzKSj0KSj0KSj0KSj0KSj0KSj0KSjzKSj3KSj1KSj0KSjzKSjzKSjzKSj0KSj1KSj3KSj1KSj3KSj1KSj1KSj1KSj3KSj3KSj3KSjzKSj3KSjzKSjzKSj3KSj3KSj1KSjzKSjzKSj3KSj3KSjzKSj3KSj3KSj3KSj3KSj3KSj3KSj3KSj3KSj3KSj3KSjzKSj3KSj3KSjzKSj1KSj3KSj3KSj3KSj3KSj3KShAwixDAAAAPXRSTlMABurnxsAkDwOATDX5tpWTdlcXkaycFNPBPQz67Obfu56di0U569nNyLpkYE8t8+Ld16ZYPPzo2oF6bB4JzXXfFwAAAX1JREFUKM+Fk+d2wjAMheUMMsgig1CSMMPeo7t6/9eqrYw20EPvD5lzPuIryRLUYmagyJYlK4HJ4FaaIane1WfMv3qqZGhN2pFHLajVGsmdX1B3XtvQUHvg6DUNV/1bs24vrLirMrgTG7ql76ALf6g/J39NrnwnZzryc9a7CH9Z5G+MSpojimODuEjQ4b/GBveQqooSXIic8MCjjTten8TAVEtq4zHjxwWnPO5ww6NqQuAVdI3bibj8Cdc8TnHLo+eC8kT0E5dgk3f8vIPWMe2Lvyog+YQPyKBHGDLkoqb7EljUEgdNgCHhD7QDmzIHZnFMVhGUeIvvVJ1DmC7/SmzgosvTlBwUpMsptRPabtSCECNDx5BwUYVChS1Oe8Q2RIixnmY/X3tu3ZbK+62s2y7awmb1mMQCsxjjaIkvWtFUMMYVdpdUzWSPSdSlJ6ke9F70oI/H4dEwrdz/RrHizvzBIN+vwVju3C7RTPVysUS5p87qJWquoGRZUmMFvwEpTCMVcK7bCgAAAABJRU5ErkJggg=="><span class="label">48小时发货</span>
+        </li>
+        <li class="arrowc">
+          <i class="arrow"></i>
+        </li>
+      </ul>
+    </div>
+    <div id="comment-content"></div>
+    <div id="recommend_1-content"></div>
+  </div>
+  <script>
+  $('#J_Add').on('click', function() {
+    $('#J_Pic').html(`<img src="http://yun.tuipink.com/wawaji/h5/static/img/bg.fce9aa8.png">`)
+  })
+  window.onerror = function(errorMessage, scriptURI, lineNumber, columnNumber, errorObj) {
+    console.log("错误信息：", errorMessage);
+    console.log("出错文件：", scriptURI);
+    console.log("出错行号：", lineNumber);
+    console.log("出错列号：", columnNumber);
+    console.log("错误详情：", errorObj);
+  }
+  window.addEventListener("error", function() {
+    console.log('err')
+    // 捕获错误
+
+  }, true);
+  </script>
+</body>
+
+</html>
