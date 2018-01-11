@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>网站导航</title>
 </head>
+
 <body>
   <dl>
     <dt>html5</dt>
@@ -23,5 +25,33 @@
       <a href="./games/bunengsi/index.html">不能死</a>
     </dd>
   </dl>
+  <img src="s" alt="">
+  <script>
+  window.onerror(function(err) {
+    console.log(err)
+  })
+  // Object.onerror
+  </script>
+  <SCRIPT>
+  window.onerror = fnErrorTrap;
+
+  function fnErrorTrap(sMsg, sUrl, sLine) {
+    oErrorLog.innerHTML = "<b>An error was thrown and caught.</b><p>";
+    oErrorLog.innerHTML += "Error: " + sMsg + "<br>";
+    oErrorLog.innerHTML += "Line: " + sLine + "<br>";
+    oErrorLog.innerHTML += "URL: " + sUrl + "<br>";
+    return false;
+  }
+
+  function fnThrow() {
+    eval(oErrorCode.value);
+  }
+  </SCRIPT>
+  <INPUT TYPE="text" ID=oErrorCode VALUE="someObject.someProperty=true;">
+  <INPUT TYPE="button" VALUE="Throw Error" onclick="fnThrow()">
+  <P>
+    <DIV ID="oErrorLog">
+    </DIV>
 </body>
+
 </html>

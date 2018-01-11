@@ -21,13 +21,11 @@
 <body>
   <button onclick="test_app()">测试app</button>
   <div id="text1"></div>
-  <div id="text2"></div>
   <script>
     function test_app() {
       var res;
-      res = app.getInfo();
+      res = app.back();
       document.querySelector('#text1').innerHTML = res;
-      document.querySelector('#text2').innerHTML = 'text2';
     }
 
   </script>
