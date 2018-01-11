@@ -18,18 +18,18 @@
 </head>
 <body>
   <button onclick="test_app()">测试app</button>
+  <div id="text1"></div>
   
   <script>
     var obody = document.querySelector('body');
 
     function test_app() {
       var res = 'default';
-      res = app.back();
-      // try {
-      //   res = app.back();
-      // } catch(e) {
-      //   res = 'local'
-      // }
+      try {
+        res = app.getAppInfo();
+      } catch(e) {
+        res = 'local'
+      }
       var oLi = document.createElement('li');//创建了li子节点，但是并没有添加进去  
       oLi.innerHTML = res;
       obody.appendChild(oLi);
