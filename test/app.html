@@ -3,8 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="target-densitydpi=device-dpi, width=750, user-scalable=no">
-  
-  <script type="text/javascript"> (function (w) { w.frontjsConfig = {token: '7f929c70527ef6f49c5c1196aec66eca', behaviour: 9} })(window); </script> <script type="text/javascript" src="https://static.frontjs.com/dist/current/tracker.min.js" crossorigin="true"></script>
   <title>测试h5</title>
   <style>
     button {
@@ -20,12 +18,23 @@
 </head>
 <body>
   <button onclick="test_app()">测试app</button>
-  <div id="text1"></div>
+  
   <script>
+    var obody = document.querySelector('body');
+
     function test_app() {
-      var res;
-      res = app.back();
-      document.querySelector('#text1').innerHTML = res;
+      var res = '';
+      try {
+        app.back();
+      } catch(e) {
+        res = 'local'
+      }
+      var oLi = document.createElement('li');//创建了li子节点，但是并没有添加进去  
+      oLi.innerHTML = res;
+      obody.appendChild(oLi);
+      var oLi2 = document.createElement('li');//创建了li子节点，但是并没有添加进去  
+      oLi2.innerHTML = '第二个值';
+      obody.appendChild(oLi2);
     }
 
   </script>
