@@ -24,11 +24,12 @@
 
     function test_app() {
       var res = 'default';
-      try {
-        res = app.back();
-      } catch(e) {
-        res = 'local'
-      }
+      res = app.back();
+      // try {
+      //   res = app.back();
+      // } catch(e) {
+      //   res = 'local'
+      // }
       var oLi = document.createElement('li');//创建了li子节点，但是并没有添加进去  
       oLi.innerHTML = res;
       obody.appendChild(oLi);
