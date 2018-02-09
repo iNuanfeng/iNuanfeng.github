@@ -1,43 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="target-densitydpi=device-dpi, width=750, user-scalable=no">
   <title>测试h5</title>
   <style>
-    button {
-      width: 200px;
-      height: 80px;
-      background: #cccccc;
-      font-size: 28px;
-    }
-    div {
-      font-size: 28px;
-    }
+  button {
+    width: 200px;
+    height: 80px;
+    background: #cccccc;
+    font-size: 28px;
+  }
+
+  div {
+    font-size: 28px;
+  }
   </style>
 </head>
+
 <body>
-  <button onclick="test_app()">测试app</button>
+  <button onclick="share()">简单分享</button>
+  <button onclick="sharePro()">定制版分享</button>
   <div id="text1"></div>
-  
   <script>
-    var obody = document.querySelector('body');
-
-    function test_app() {
-      var res = 'default';
-      try {
-        res = app.getAppInfo();
-      } catch(e) {
-        res = 'local'
-      }
-      var oLi = document.createElement('li');//创建了li子节点，但是并没有添加进去  
-      oLi.innerHTML = res;
-      obody.appendChild(oLi);
-      var oLi2 = document.createElement('li');//创建了li子节点，但是并没有添加进去  
-      oLi2.innerHTML = '第2个值';
-      obody.appendChild(oLi2);
+  var obody = document.querySelector('body');
+  var param = {
+    notice: '标题小喇叭',
+    field: {
+      url: 'http://www.tuipink.com', // url
+      title: '官网首页', // 标题
+      text: '官网首页的描述', // 副标题
+      picUrl: 'http://yun.dui88.com/images/201707/n53th459d9.jpg', // 图片url
+      type: 'SHARE', // SHARE:分享 JUMP: 只跳转
+      content: '没有内容的' // 只跳转的复制内容
     }
+  }
+  var paramPro = {
+    notice: '标题小喇叭',
+    channel: {
+      wechatcircle: {
+        url: 'http://www.tuipink.com', // url
+        title: '官网首页 wechatcircle', // 标题
+        text: '官网首页的描述', // 副标题
+        picUrl: 'http://yun.dui88.com/images/201707/n53th459d9.jpg', // 图片url
+        type: 'SHARE', // SHARE:分享 JUMP: 只跳转
+        content: '没有内容的' // 只跳转的复制内容
+      },
+      wechatfriend: {
+        url: 'http://www.tuipink.com', // url
+        title: '官网首页 wechatfriend', // 标题
+        text: '官网首页的描述', // 副标题
+        picUrl: 'http://yun.dui88.com/images/201707/n53th459d9.jpg', // 图片url
+        type: 'SHARE', // SHARE:分享 JUMP: 只跳转
+        content: '没有内容的' // 只跳转的复制内容
+      },
+      qqfriend: {
+        url: 'http://www.tuipink.com', // url
+        title: '官网首页 qqfriend', // 标题
+        text: '官网首页的描述', // 副标题
+        picUrl: 'http://yun.dui88.com/images/201707/n53th459d9.jpg', // 图片url
+        type: 'SHARE', // SHARE:分享 JUMP: 只跳转
+        content: '没有内容的' // 只跳转的复制内容
+      },
+      qqzone: {
+        url: 'http://www.tuipink.com', // url
+        title: '官网首页 qqzone', // 标题
+        text: '官网首页的描述', // 副标题
+        picUrl: 'http://yun.dui88.com/images/201707/n53th459d9.jpg', // 图片url
+        type: 'SHARE', // SHARE:分享 JUMP: 只跳转
+        content: '没有内容的' // 只跳转的复制内容
+      },
+      weibo: {
+        url: 'http://www.tuipink.com', // url
+        title: '官网首页 weibo', // 标题
+        text: '官网首页的描述', // 副标题
+        picUrl: 'http://yun.dui88.com/images/201707/n53th459d9.jpg', // 图片url
+        type: 'SHARE', // SHARE:分享 JUMP: 只跳转
+        content: '没有内容的' // 只跳转的复制内容
+      },
+      copy: {
+        url: 'http://www.tuipink.com', // url
+        title: '', // 标题
+        text: '', // 副标题
+        picUrl: '', // 图片url
+        type: 'SHARE', // SHARE:分享 JUMP: 只跳转
+        content: '没有内容的' // 只跳转的复制内容
+      }
+    }
+  }
 
+
+  function share() {
+    app.share(JSON.stringify(param))
+  }
+
+  function sharePro() {
+    app.share(JSON.stringify(paramPro))
+  }
   </script>
 </body>
+
 </html>
