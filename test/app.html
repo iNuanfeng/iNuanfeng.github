@@ -21,7 +21,8 @@
 
 <body>
   <button onclick="share()">简单分享</button>
-  <button onclick="sharePro()">定制版分享</button>
+  <button onclick="sharePro()">定制版分享Share</button>
+  <button onclick="shareProJump()">定制版分享Jump</button>
   <div id="text1"></div>
   <script>
   var obody = document.querySelector('body');
@@ -90,6 +91,60 @@
     }
   }
 
+  var paramProJump = {
+    notice: '标题小喇叭',
+    channel: {
+      wechatcircle: {
+        url: 'http://www.tuipink.com', // url
+        title: '官网首页 wechatcircle', // 标题
+        text: '官网首页的描述', // 副标题
+        picUrl: 'http://yun.dui88.com/images/201707/n53th459d9.jpg', // 图片url
+        type: 'JUMP', // SHARE:分享 JUMP: 只跳转
+        content: '没有内容的' // 只跳转的复制内容
+      },
+      wechatfriend: {
+        url: 'http://www.tuipink.com', // url
+        title: '官网首页 wechatfriend', // 标题
+        text: '官网首页的描述', // 副标题
+        picUrl: 'http://yun.dui88.com/images/201707/n53th459d9.jpg', // 图片url
+        type: 'JUMP', // SHARE:分享 JUMP: 只跳转
+        content: '没有内容的' // 只跳转的复制内容
+      },
+      qqfriend: {
+        url: 'http://www.tuipink.com', // url
+        title: '官网首页 qqfriend', // 标题
+        text: '官网首页的描述', // 副标题
+        picUrl: 'http://yun.dui88.com/images/201707/n53th459d9.jpg', // 图片url
+        type: 'JUMP', // SHARE:分享 JUMP: 只跳转
+        content: '没有内容的' // 只跳转的复制内容
+      },
+      qqzone: {
+        url: 'http://www.tuipink.com', // url
+        title: '官网首页 qqzone', // 标题
+        text: '官网首页的描述', // 副标题
+        picUrl: 'http://yun.dui88.com/images/201707/n53th459d9.jpg', // 图片url
+        type: 'JUMP', // SHARE:分享 JUMP: 只跳转
+        content: '没有内容的' // 只跳转的复制内容
+      },
+      weibo: {
+        url: 'http://www.tuipink.com', // url
+        title: '官网首页 weibo', // 标题
+        text: '官网首页的描述', // 副标题
+        picUrl: 'http://yun.dui88.com/images/201707/n53th459d9.jpg', // 图片url
+        type: 'JUMP', // SHARE:分享 JUMP: 只跳转
+        content: '没有内容的' // 只跳转的复制内容
+      },
+      copy: {
+        url: 'http://www.tuipink.com', // url
+        title: '', // 标题
+        text: '', // 副标题
+        picUrl: '', // 图片url
+        type: 'JUMP', // SHARE:分享 JUMP: 只跳转
+        content: '没有内容的' // 只跳转的复制内容
+      }
+    }
+  }
+
 
   function share() {
     app.share(JSON.stringify(param))
@@ -97,6 +152,10 @@
 
   function sharePro() {
     app.sharePro(JSON.stringify(paramPro))
+  }
+
+  function shareProJump() {
+    app.sharePro(JSON.stringify(paramProJump))
   }
   </script>
 </body>
