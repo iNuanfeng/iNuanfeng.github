@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script>
+  var vm = new Vue({
+  el: '#example',
+  data: data
+})
+  var getChildrenTextContent = function(children) {
+    return children.map(function(node) {
+      return node.children ?
+        getChildrenTextContent(node.children) :
+        node.text
+    }).join('')
+  }
+  Vue.component('anchored-heading', {
+    render: function(createElement) {
+      // create kebabCase id
+      var headingId = getChildrenTextContent(this.$slots.default)
+        .toLowerCase()
+        .replace(/\W+/g, '-')
+        .replace(/(^\-|\-$)/g, '')
+      return createElement(
+        'h' + this.level, [
+          createElement('a', {
+            attrs: {
+              name: headingId,
+              href: '#' + headingId
+            }
+          }, this.$slots.default)
+        ]
+      )
+    },
+    props: {
+      level: {
+        type: Number,
+        required: true
+      }
+    }
+  })
+  </script>
+</head>
+
+<body>
+  <div id="example">
+    <anchored-heading>hehe</anchored-heading>
+  </div>
+  
+</body>
+
+</html>
