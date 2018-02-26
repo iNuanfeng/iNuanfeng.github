@@ -23,6 +23,8 @@
   <button onclick="share()">简单分享</button>
   <button onclick="sharePro()">定制版分享Share</button>
   <button onclick="shareProJump()">定制版分享Jump</button>
+  <button onclick="h5shareWx()">h5分享到微信</button>
+  <button onclick="h5sharePyq()">h5分享到朋友圈</button>
   <div id="text1"></div>
   <script>
   var obody = document.querySelector('body');
@@ -145,6 +147,30 @@
     }
   }
 
+  var h5wx = {
+    target: 'wechatfriend',
+    field: {
+      url: 'http://www.tuipink.com', // url
+      title: '分享到微信好友的信息', // 标题
+      text: '分享到微信好友的信息分享到微信好友的信息分享到微信好友的信息', // 副标题
+      picUrl: 'http://yun.dui88.com/images/201707/n53th459d9.jpg', // 图片url
+      type: 'SHARE', // SHARE:分享 JUMP: 只跳转
+      content: '没有内容的' // 只跳转的复制内容
+    }
+  }
+
+  var h5pyq = {
+    target: 'wechatcircle',
+    field: {
+      url: 'http://www.tuipink.com', // url
+      title: '朋友圈呀朋友圈呀', // 标题
+      text: '朋友圈呀朋友圈呀朋友圈呀朋友圈呀朋友圈呀朋友圈呀朋友圈呀朋友圈呀朋友圈呀朋友圈呀', // 副标题
+      picUrl: 'http://yun.dui88.com/images/201707/n53th459d9.jpg', // 图片url
+      type: 'SHARE', // SHARE:分享 JUMP: 只跳转
+      content: '没有内容的' // 只跳转的复制内容
+    }
+  }
+
 
   function share() {
     app.share(JSON.stringify(param))
@@ -156,6 +182,14 @@
 
   function shareProJump() {
     app.sharePro(JSON.stringify(paramProJump))
+  }
+
+  function h5shareWx() {
+    app.sharePro(JSON.stringify(h5wx))
+  }
+
+  function h5sharePyq() {
+    app.sharePro(JSON.stringify(h5pyq))
   }
   </script>
 </body>
