@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>css实现圆环进度</title>
+  <style type="text/css">
+  .circle_process {
+    position: relative;
+    width: 200px;
+    height: 200px;
+  }
+
+  .circle_process .wrapper {
+    width: 100px;
+    height: 200px;
+    position: absolute;
+    top: 0;
+    overflow: hidden;
+  }
+
+  .circle_process .right {
+    right: 0;
+  }
+
+  .circle_process .left {
+    left: 0;
+  }
+
+  .circle_process .circle {
+    width: 160px;
+    height: 160px;
+    border: 20px solid transparent;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    transform: rotate(-135deg);
+    transition: all 1s;
+  }
+
+  .circle_process .rightcircle {
+    border-top: 20px solid green;
+    border-right: 20px solid green;
+    right: 0;
+    animation: circle_right 5s linear infinite;
+  }
+
+  .circle_process .leftcircle {
+    border-bottom: 20px solid green;
+    border-left: 20px solid green;
+    left: 0;
+
+    animation: circle_left 5s linear infinite;
+  }
+
+  @keyframes circle_right {
+    0% {
+      transform: rotate(-135deg);
+    }
+    50%,
+    100% {
+      transform: rotate(45deg);
+    }
+  }
+
+  @keyframes circle_left {
+    0%,
+    50% {
+      transform: rotate(-135deg);
+    }
+    100% {
+      transform: rotate(45deg);
+    }
+  }
+
+  #show {
+    text-align: center;
+    line-height: 200px;
+    font-size: 60px;
+    font-weight: 700;
+  }
+  </style>
+</head>
+
+<body>
+  <div class="circle_process">
+    <div class="wrapper right">
+      <div class="circle rightcircle" id="rightcircle"></div>
+    </div>
+    <div class="wrapper left">
+      <div class="circle leftcircle" id="leftcircle"></div>
+    </div>
+    <div id="show"></div>
+  </div>
+  <script>
+  // function getTime() {
+  //   var date = new Date();
+  //   var second = date.getSeconds();
+
+  //   var rightcircle = document.getElementById('rightcircle');
+  //   var leftcircle = document.getElementById('leftcircle');
+  //   var show = document.getElementById('show');
+
+  //   show.innerHTML = second;
+
+  //   if (second <= 30) {
+  //     rightcircle.style.cssText = "transform: rotate(" + (-135 + 6 * second) + "deg)";
+  //     leftcircle.style.cssText = "transform: rotate(-135deg)";
+  //   } else {
+  //     rightcircle.style.cssText = "transform: rotate(45deg)";
+  //     leftcircle.style.cssText = "transform: rotate(" + (-135 + 6 * (second - 30)) + "deg)";
+  //   }
+  // }
+  // getTime();
+  // setInterval(function() {
+  //   getTime();
+  // }, 1000)
+  </script>
+</body>
+
+</html>

@@ -25,6 +25,7 @@
   <button onclick="shareProJump()">定制版分享Jump</button>
   <button onclick="h5shareWx()">h5分享到微信</button>
   <button onclick="h5sharePyq()">h5分享到朋友圈</button>
+  <button onclick="wakeup()">拉起ios应用</button>
   <div id="text1"></div>
   <script>
   var obody = document.querySelector('body');
@@ -190,6 +191,11 @@
 
   function h5sharePyq() {
     app.h5share(JSON.stringify(h5pyq))
+  }
+
+  function wakeup() {
+    window.location.href = "com.tm.prizeclaw.a://";  
+    
   }
   </script>
 </body>

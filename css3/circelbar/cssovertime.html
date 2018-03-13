@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>css圆环倒计时</title>
+  <style type="text/css">
+  .circle_process {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+  }
+
+  .circle_process .wrapper {
+    width: 100px;
+    height: 200px;
+    position: absolute;
+    top: 0;
+    overflow: hidden;
+  }
+
+  .circle_process .right {
+    right: 0;
+  }
+
+  .circle_process .left {
+    left: 0;
+  }
+
+  .circle_process .circle {
+    width: 160px;
+    height: 160px;
+    border: 20px solid transparent;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    transform: rotate(45deg);
+    transition: all 1s;
+  }
+
+  .circle_process .rightcircle {
+    border-top: 20px solid #FF8F2C;
+    border-right: 20px solid #FF8F2C;
+    right: 0;
+  }
+
+  .circle_process .leftcircle {
+    border-bottom: 20px solid #FF8F2C;
+    border-left: 20px solid #FF8F2C;
+    left: 0;
+  }
+
+  #show {
+    text-align: center;
+    line-height: 200px;
+    font-size: 60px;
+    font-weight: 700;
+    color: #ffffff;
+  }
+  </style>
+</head>
+
+<body>
+  <div class="circle_process">
+    <div class="wrapper right">
+      <div class="circle rightcircle" id="rightcircle"></div>
+    </div>
+    <div class="wrapper left">
+      <div class="circle leftcircle" id="leftcircle"></div>
+    </div>
+    <div id="show"></div>
+  </div>
+  <script>
+  var overtime = 30;
+  function run() {
+    var rightcircle = document.getElementById('rightcircle');
+    var leftcircle = document.getElementById('leftcircle');
+    var show = document.getElementById('show');
+
+    show.innerHTML = overtime;
+
+    if (overtime <= 15) {
+      leftcircle.style.cssText = "transform: rotate(" + (45 + (12 * (15 - overtime))) + "deg)";
+      rightcircle.style.cssText = "transform: rotate(225deg)";
+    } else {
+      leftcircle.style.cssText = "transform: rotate(45deg)";
+      rightcircle.style.cssText = "transform: rotate(" + (45 + 12 * (30 - overtime)) + "deg)";
+    }
+  }
+  run();
+  setInterval(function() {
+    overtime--;
+    run();
+  }, 1000)
+  </script>
+</body>
+
+</html>
