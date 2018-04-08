@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html style="width: 100%;height: 100%">
+<meta name="viewport" content="target-densitydpi=device-dpi, width=750, user-scalable=no">
+
+<head>
+  <script src="./lottie.js"></script>
+  <style>
+  #gif {
+    width: 600px;
+    height: 600px;
+    background-image: url('./one.gif');
+    background-size: 100% 100%;
+  }
+
+  .honor {
+    width: 400px;
+    height: 120px;
+    position: relative;
+  }
+
+  .honor .bglight {
+    width: 225px;
+    height: 225px;
+    background-image: url('./123/img_5.png');
+    background-size: 100% 100%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    animation: rotate-light 5s linear infinite;
+  }
+
+  @keyframes rotate-light {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  </style>
+</head>
+
+<body style="background-color:#333; margin: 0px;height: 100%;">
+  <div id="animation"></div>
+  <div class="honor">
+    <div class="bglight"></div>
+    <div class="star-yellow star1"></div>
+    <div class="star-yellow star2"></div>
+    <div class="star-white star3"></div>
+    <div class="star-white star4"></div>
+  </div>
+  <!-- <div id="gif"></div> -->
+  <a href="https://github.com/airbnb/lottie-web" style="color: #fff; font-size: 48px; text-align: center; display: block; margin-top: 100px;">lottie github</a>
+  <script>
+  lottie.loadAnimation({
+    container: document.getElementById('animation'), // the dom element that will contain the animation
+    renderer: 'svg',
+    loop: true,
+    autoplay: true,
+    path: './123.json' // the path to the animation json
+  });
+  </script>
+</body>
+
+</html>

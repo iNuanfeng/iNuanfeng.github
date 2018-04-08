@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" type="text/css" href="jsoneditor.css" />
+</head>
+
+<body>
+  <div id="editor" class="json-editor"></div>
+  <pre id="json"></pre>
+  <script src="http://apps.bdimg.com/libs/zepto/1.1.4/zepto.min.js
+"></script>
+  <script src="jquery.jsoneditor.js"></script>
+  <script>
+  var myjson = { "awardName": { "awardName": "二等奖", "awardType": 0, "goodsName": "呵呵呵", "goodsUrl": "string" }, "awardType": 0, "goodsName": "呵呵呵", "goodsUrl": "string" };
+  var opt = {
+    change: function(data) { /* called on every change */ },
+    propertyclick: function(path) { /* called when a property is clicked with the JS path to that property */ }
+  };
+  /* opt.propertyElement = '<textarea>'; */ // element of the property field, <input> is default
+  /* opt.valueElement = '<textarea>'; */ // element of the value field, <input> is default
+  $('#json').jsonEditor(myjson, opt);
+  </script>
+</body>
+
+</html>
