@@ -49,13 +49,11 @@ $(function() {
     for (var i = 0; i < USERS.length; i++) {
       if (val === USERS[i].name || val === USERS[i].mobile) {
         userResult = USERS[i];
-        console.log(userResult)
         break;
       }
     }
 
     if (userResult) {
-      console.log(JSON.stringify(userResult))
       var html = '<div class="weui-cell weui-cell_access user-list" data-info=' + JSON.stringify(userResult) + '>' +
         '<div class="weui-cell__bd weui-cell_primary">' +
         '<p>' + userResult.name + ' (' + userResult.mobile + ')' + '</p>' +
@@ -74,6 +72,7 @@ $(function() {
       $('#J_ResultName').html(userInfo.name + ' ' + userInfo.mobile);
       $('#J_ResultPlace').html(userInfo.place);
       $('#J_Result').show();
+      hideSearchResult();
     })
   }
 
