@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,viewport-fit=cover">
+  <title>活动签到</title>
+  <link rel="stylesheet" href="./weui.min.css" />
+</head>
+
+<body ontouchstart>
+  <div class="container" id="container">
+    <div class="page">
+      <div class="page__hd">
+        <!-- <h1 class="page__title">查询座位</h1> -->
+        <!-- <p class="page__desc">搜索栏</p> -->
+      </div>
+      <div class="page__bd">
+        <div class="weui-search-bar" id="searchBar">
+          <form class="weui-search-bar__form">
+            <div class="weui-search-bar__box">
+              <i class="weui-icon-search"></i>
+              <input type="search" class="weui-search-bar__input" id="searchInput" placeholder="请输入姓名或手机号" required/>
+              <a href="javascript:" class="weui-icon-clear" id="searchClear"></a>
+            </div>
+            <label class="weui-search-bar__label" id="searchText">
+                        <i class="weui-icon-search"></i>
+                        <span>输入姓名或手机号查询座位</span>
+                    </label>
+          </form>
+          <a href="javascript:" class="weui-search-bar__cancel-btn" id="searchCancel">取消</a>
+        </div>
+        <div class="weui-cells searchbar-result" id="searchResult" style="display: none;">
+
+        </div>
+
+        <div style="display: none;" id="J_Result">
+          <div class="weui-cells__title">查询结果</div>
+          <div class="weui-cells">
+            <div class="weui-cell">
+              <div class="weui-cell__hd" style="position: relative;margin-right: 10px;">
+                <img src="./img/avatar.png" style="width: 50px;display: block" />
+              </div>
+              <div class="weui-cell__bd">
+                <p id="J_ResultName"></p>
+                <p style="font-size: 13px;color: #888888;" id="J_ResultPlace"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="page__ft" style="position: fixed; width: 100%; text-align: center; bottom: 30px;">
+        <p style="color: #ababab;">xxx 主办</p>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="./zepto.min.js"></script>
+  <script src="./init.js"></script>
+  <script src="./users.js"></script>
+  <script src="./search.js"></script>
+</body>
+
+</html>
