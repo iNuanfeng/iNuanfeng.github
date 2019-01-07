@@ -16,4 +16,4 @@ for (var i = 0; i < arr.length; i++) {
   console.log(arr[i]);
 }
 
-console.log('my1')
+console.log('my2')
