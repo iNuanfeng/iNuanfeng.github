@@ -16,4 +16,4 @@ for (var i = 0; i < arr.length; i++) {
   console.log(arr[i]);
 }
 
-console.log('my4')
+console.log('master1')
