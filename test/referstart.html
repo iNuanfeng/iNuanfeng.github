@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <!-- <meta name="Referrer" content="unsafe-url" /> -->
-  <meta content="always" name="referrer"/>
   <title>refer start</title>
 </head>
 <body>
@@ -16,5 +15,14 @@
   <dd>
     <a href="./referend.html">refer 落地页</a>
   </dd>
+  <dd>
+    <button id="goself">手动跳</button>
+  </dd>
+  <script src="https://cdn.bootcss.com/zepto/1.2.0/zepto.min.js"></script>
+  <script>
+    $('#goself').on('click', function() {
+      window.location.href = './referend.html'
+    })
+  </script>
 </body>
 </html>
