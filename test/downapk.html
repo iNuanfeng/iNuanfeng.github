@@ -36,11 +36,28 @@
   <dd>
     <a href="https://www.heiniubao.com/activity_mgb/tuiaddcpc2">黑牛2</a>
   </dd>
+  <div id="location_demo"></div>
   <script src="https://cdn.bootcss.com/zepto/1.2.0/zepto.min.js"></script>
   <script>
     $('#goself').on('click', function () {
       window.location.href = './referend.html'
     })
+    
+    var x=document.getElementById("location_demo");
+    function getLocation(){
+      console.log('1111')
+        if (navigator.geolocation){
+            navigator.geolocation.getCurrentPosition(showPosition);
+        }else{
+            x.innerHTML="Geolocation is not supported by this browser.";
+        }
+    }
+    function showPosition(position){
+      console.log('222')
+        x.innerHTML="Latitude: " + position.coords.latitude + "<br />Longitude: " + position.coords.longitude;
+    }
+    console.log('333')
+    getLocation();
   </script>
 </body>
 
