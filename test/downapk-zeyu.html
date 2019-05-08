@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>down load apk</title>
+</head>
+
+<body>
+  <div>
+    <a href="https://xqdownload.2345.com/xq_apk/xingqiu_sc-httuia2_as_lhp.apk">下载2345-星球</a>
+    <a href="https://yt-cdn.saasv.com/youtiao/apk/Youtiao_v1.3.8.2_quwen_release.apk">下载有条-趣闻</a>
+    <a href="https://yt-cdn.saasv.com/youtiao/apk/Youtiao_v1.3.8.2_huitouv2_release.apk">下载有条-会投</a>
+    <a href="https://yun.dui88.com/wawaji/apk/com.ttyouqu.app.1902141039.apk">趣闻-华为同款</a>
+  </div>
+  <div>
+    <a href="./referend.html">refer 落地页</a>
+  </div>
+
+
+  <dd>
+    <a href="http://www.cnblogs.com/woodk/">http博客</a>
+  </dd>
+  <dd>
+    <a href="https://www.cnblogs.com/woodk/">https博客</a>
+  </dd>
+  <dd>
+    <a href="./referend.html">refer 落地页</a>
+  </dd>
+  <dd>
+    <button id="goself">手动跳</button>
+  </dd>
+  <dd>
+    <a href="https://www.heiniubao.com/activity_mgb/tuiaddcpc1">黑牛1</a>
+  </dd>
+  <dd>
+    <a href="https://www.heiniubao.com/activity_mgb/tuiaddcpc2">黑牛2</a>
+  </dd>
+  <div id="location_demo"></div>
+  <script src="https://cdn.bootcss.com/zepto/1.2.0/zepto.min.js"></script>
+  <script>
+    $('#goself').on('click', function () {
+      window.location.href = './referend.html'
+    })
+    
+    var x=document.getElementById("location_demo");
+    function getLocation(){
+      console.log('1111')
+        if (navigator.geolocation){
+            navigator.geolocation.getCurrentPosition(showPosition);
+        }else{
+            x.innerHTML="Geolocation is not supported by this browser.";
+        }
+    }
+    function showPosition(position){
+      console.log('222')
+        x.innerHTML="Latitude: " + position.coords.latitude + "<br />Longitude: " + position.coords.longitude;
+    }
+    console.log('333')
+    getLocation();
+  </script>
+</body>
+
+</html>

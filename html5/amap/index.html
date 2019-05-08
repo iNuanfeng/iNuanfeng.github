@@ -15,7 +15,6 @@
 </head>
 
 <body>
-    <div>高德地图</div>
     <div id="container"></div>
     <script>
     mapObj = new AMap.Map('iCenter');
@@ -39,10 +38,10 @@
         AMap.event.addListener(geolocation, 'error', onError); //返回定位出错信息
     });
     function onComplete () {
-      alert('complete')
+      console.log('complete')
     }
     function onError () {
-      alert('onError')
+      console.log('onError')
     }
     </script>
 </body>
