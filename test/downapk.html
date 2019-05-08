@@ -3,47 +3,69 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-    <script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.14&key=0f192cfa80889a6d2271f5faddb97904"></script>
-    <style>
-    #container {
-        width: 300px;
-        height: 180px;
-    }
-    </style>
+    <title>down load apk</title>
 </head>
 
 <body>
-    <div>高德地图</div>
-    <div id="container"></div>
+    <div>
+        <a href="https://xqdownload.2345.com/xq_apk/xingqiu_sc-httuia2_as_lhp.apk">下载2345-星球</a>
+        <a href="https://yt-cdn.saasv.com/youtiao/apk/Youtiao_v1.3.8.2_quwen_release.apk">下载有条-趣闻</a>
+        <a href="https://yt-cdn.saasv.com/youtiao/apk/Youtiao_v1.3.8.2_huitouv2_release.apk">下载有条-会投</a>
+        <a href="https://yun.dui88.com/wawaji/apk/com.ttyouqu.app.1902141039.apk">趣闻-华为同款</a>
+    </div>
+    <div>
+        <a href="./referend.html">refer 落地页</a>
+    </div>
+    <dd>
+        <a href="http://www.cnblogs.com/woodk/">http博客</a>
+    </dd>
+    <dd>
+        <a href="https://www.cnblogs.com/woodk/">https博客</a>
+    </dd>
+    <dd>
+        <a href="./referend.html">refer 落地页</a>
+    </dd>
+    <dd>
+        <button id="goself">手动跳</button>
+    </dd>
+    <dd>
+        <a href="https://www.heiniubao.com/activity_mgb/tuiaddcpc1">黑牛1</a>
+    </dd>
+    <dd>
+        <a href="https://www.heiniubao.com/activity_mgb/tuiaddcpc2">黑牛2</a>
+    </dd>
+    <div id="location_demo"></div>
+    <script src="https://cdn.bootcss.com/zepto/1.2.0/zepto.min.js"></script>
     <script>
-    mapObj = new AMap.Map('iCenter');
-    mapObj.plugin('AMap.Geolocation', function() {
-        geolocation = new AMap.Geolocation({
-            enableHighAccuracy: true, //是否使用高精度定位，默认:true
-            timeout: 10000, //超过10秒后停止定位，默认：无穷大
-            maximumAge: 0, //定位结果缓存0毫秒，默认：0
-            convert: true, //自动偏移坐标，偏移后的坐标为高德坐标，默认：true
-            showButton: true, //显示定位按钮，默认：true
-            buttonPosition: 'LB', //定位按钮停靠位置，默认：'LB'，左下角
-            buttonOffset: new AMap.Pixel(10, 20), //定位按钮与设置的停靠位置的偏移量，默认：Pixel(10, 20)
-            showMarker: true, //定位成功后在定位到的位置显示点标记，默认：true
-            showCircle: true, //定位成功后用圆圈表示定位精度范围，默认：true
-            panToLocation: true, //定位成功后将定位到的位置作为地图中心点，默认：true
-            zoomToAccuracy: true //定位成功后调整地图视野范围使定位位置及精度范围视野内可见，默认：false
-        });
-        mapObj.addControl(geolocation);
-        geolocation.getCurrentPosition();
-        AMap.event.addListener(geolocation, 'complete', onComplete); //返回定位信息
-        AMap.event.addListener(geolocation, 'error', onError); //返回定位出错信息
-    });
-    function onComplete () {
-      alert('complete')
+    $('#goself').on('click', function() {
+        window.location.href = './referend.html'
+    })
+
+    var x = document.getElementById("location_demo");
+
+    function getLocation() {
+        alert('1111')
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition, geoError);
+        } else {
+            x.innerHTML = "Geolocation is not supported by this browser.";
+        }
     }
-    function onError () {
-      alert('onError')
+
+    function showPosition(position) {
+        alert('222')
+        x.innerHTML = "Latitude: " + position.coords.latitude + "<br />Longitude: " + position.coords.longitude;
     }
+    var geoError = function(error) {
+        alert('Error occurred. Error code: ' + error.code);
+        // error.code can be:
+        //   0: unknown error
+        //   1: permission denied
+        //   2: position unavailable (error response from location provider)
+        //   3: timed out
+    };
+    alert('333')
+    getLocation();
     </script>
 </body>
 
