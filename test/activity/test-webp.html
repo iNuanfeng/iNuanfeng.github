@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    this.observer = new MutationObserver((mutationsList, observer) => {
+      // let bodyTarget = document.body;
+      // console.log('111')
+      for(var mutation of mutationsList) {
+        if (mutation.type == 'childList') {
+            console.log('A child node has been added or removed.');
+        }
+        else if (mutation.type == 'attributes') {
+            console.log('The ' + mutation.attributeName + ' attribute was modified.');
+        }
+      }
+    });
+
+    this.observer.observe(document, {
+      attributes: true, 
+      childList: true,
+      subtree: true
+    });
+  </script>
+</head>
+
+<body>
+  <div id="preload">
+
+  </div>
+  <!-- <script>
+    var cc = new Image();
+    cc.src = "http://baike.baidu.com/cms/rc/240x112dierzhou.jpg";
+    document.getElementById("preload").appendChild(cc);
+  </script> -->
+  <div style="display: none;">
+      <img src="//yun.tuisnake.com/yrzhao/0305cyan/bg.png?x-oss-process=image/format,webp" alt="">
+
+  </div>
+  <!-- <img src="//yun.tuisnake.com/yrzhao/0305cyan/bg.png" alt=""> -->
+  <script src="//yun.dui88.com/h5-tuia/vue.runtime.min.js"></script>
+  <script type="text/javascript"
+    src="//yun.tuisnake.com/h5-mami/dist/activity-vue-cyan-turncircle_meituan-entry.8a8a4613b48413bf9a26.js"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
